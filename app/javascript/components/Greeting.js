@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchGreeting } from '../store';
 
 const Greeting = () => {
-    const [greeting, setGreeting] = useState('');
+    const greeting = useSelector((state) => state.greeting);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('/api/greetings/random')
-        .then((response) => response.json())
-        .then((data) => setGreeting(data.message))
-        .catch((error) => console.error(error));
-    }, []);
+        dispatch(fetchGreeting());
+    }, [dispatch]);
 
     return (
         <div>
