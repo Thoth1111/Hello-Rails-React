@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
-const Message = () => {
-    const [message, setMessage] = useState('');
+const Greeting = () => {
+    const [greeting, setGreeting] = useState('');
 
     useEffect(() => {
-        fetch('/api/messages/random')
+        fetch('/api/greetings/random')
         .then((response) => response.json())
-        .then((data) => setMessage(data.message))
+        .then((data) => setGreeting(data.message))
         .catch((error) => console.error(error));
     }, []);
 
     return (
         <div>
-            <h2>{message}</h2>
+            <h2>{greeting}</h2>
         </div>
     );
 };
 
-export default Message;
+export default Greeting;
