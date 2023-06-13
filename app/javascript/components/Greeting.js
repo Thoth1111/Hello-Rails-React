@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchGreeting } from '../store';
+import { fetchGreeting, selectGreeting } from '../redux/greetingSlice';
 
 const Greeting = () => {
-    const greeting = useSelector((state) => state.greeting);
+    const greeting = useSelector(selectGreeting);
     const dispatch = useDispatch();
 
     useEffect(() => {
