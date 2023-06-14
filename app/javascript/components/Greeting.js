@@ -12,6 +12,7 @@ const Greeting = () => {
 
     return (
         <div>
+            <p>Greeting Here:</p>
             <h2>{greeting}</h2>
         </div>
     );
