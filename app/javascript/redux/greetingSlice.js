@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchGreeting = createAsyncThunk('greetings/fetchGreetings', async() => {
-  const response = await fetch('http://localhost:3000/api/greetings/random');
+export const fetchGreeting = createAsyncThunk('greetings/fetchGreeting', async() => {
+  const response = await fetch('http://127.0.0.1:5000/api/greetings/random');
   const data = await response.json();
   return data;  
 });
@@ -33,6 +33,6 @@ const greetingSlice = createSlice({
     },
 });
 
-export const selectGreeting = (state) => state.greeting.greeting;
+export const selectGreeting = (state) => state.greeting.greeting.message;
 
 export default greetingSlice.reducer;
