@@ -74,4 +74,5 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'foreman'
 gem 'rubocop', '>= 1.0', '< 2.0'
